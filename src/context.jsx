@@ -1,0 +1,11 @@
+import { createContext } from "react";
+export const ServerContext = createContext()
+export const RoleContext = createContext()
+export const AuthContext = createContext()
+export const RoomContext = createContext()
+export const MembersContext = createContext()
+export const StartContext = createContext()
+export const QuestionContext = createContext()
+export const GamePlayContext = createContext()
+export const MeContext = createContext()
+export const UnAnsweredContext = createContext()

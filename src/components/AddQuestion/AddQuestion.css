@@ -1,0 +1,42 @@
+.aq-body {
+    /* background-color: red; */
+    margin: auto;
+    /* color: red; */
+    width: 50%;
+    margin-top:5em;
+    padding: 2em;
+    padding-top: 3em;
+    display: flex;
+    flex-direction: column;
+    gap:1em;
+    background-color: var(--text);
+    border: 0.1em solid var(--background);
+    border-radius: .5em;
+    position: relative;
+}
+.aq-body .input.ques {
+    width: 100%;
+    padding: .5em;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.aq-body .input.choice{
+    width: 100%;
+    padding: .5em;
+    font-size: 1.1em;
+}
+.aq-body .cor-btn.true{
+    background-color: var(--brand);
+    font-weight: bold;
+}
+.aq-body .cor-btn.false{
+    background-color: red;
+    color: white;
+    font-weight: bold;
+}
+.aq-body .add-btn {
+    background-color: var(--brand);
+}
+.aq-body .input {
+    border-radius: .5em;
+}

@@ -1,0 +1,51 @@
+.gamePlayBody {
+    color: white;
+    background-color: #322e47;
+    width: auto;
+    height: 60%;
+    border-radius: .5em;
+    box-shadow: 10px 10px 8px #888888;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* justify-content: center; */
+    padding: 1em;
+}
+
+
+.gamePlayBody .questionText {
+    height: auto;
+    width: 90%;
+    background-color: #494b52;
+    padding: 1em;
+    border-radius: .5em;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.gamePlayBody .options {
+    margin-top: 5em;
+    width: 90%;
+    /* background-color: red; */
+    padding: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    overflow-y: scroll;
+}
+
+.options .optionCard {
+    background-color: #909299;
+    width: 35%;
+    height: auto;
+    padding: 2em;
+    border-radius: .5em;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: .5s ease-in-out;
+    /* color:blue; */
+}
+.options .optionCard:hover {
+    scale: 110%;
+    background-color: #c5c6c9;
+}

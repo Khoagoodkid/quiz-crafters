@@ -1,0 +1,44 @@
+.creator-body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+   
+    /* background-color: red; */
+}
+.creator-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.top-bar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    align-items: center;
+}
+.creator-container .top-bar .collections-controller{
+    /* background-color: red; */
+    display: flex;
+    flex-direction: row;
+    padding-left: 2em;
+    gap: 2em;
+}
+.creator-container .top-bar button{
+    background-color: var(--brand) ;
+    border: none;
+}
+.creator-container .top-bar .add-ques-btn{
+    margin-right: 3em;
+}
+.creator-container .questions-display {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

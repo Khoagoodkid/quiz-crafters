@@ -1,0 +1,36 @@
+.leftbar-body {
+    width: 8em;
+    /* height: 100%; */
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1em;
+    align-items: center;
+}
+.leftbar-body .lower {
+    display: flex;
+    flex-direction: column;
+}
+.leftbar-body .lower .tools {
+    display: flex;
+    flex-direction: column;
+}
+.leftbar-body .lower .tools .collection,.leftbar-body .lower .tools .host {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    
+}
+.leftbar-body .lower .creator-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5em;
+    padding-top: 1em;
+}
+.leftbar-body .lower .creator-info img{
+    width: 50%;
+
+}

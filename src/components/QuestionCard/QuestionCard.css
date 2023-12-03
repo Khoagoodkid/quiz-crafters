@@ -1,0 +1,16 @@
+.ques-card-body {
+    width: 80%;
+  
+    
+}
+.ques-card-body .ques-card-bar {
+    display: flex;
+    gap: 1em;
+}
+.ques-card-body .choice-card {
+    width: 100%;
+    background-color: var(--bg-opaque);
+    text-align: left;
+    padding: .5em 0em .5em 3em;
+    font-weight: bold;
+}

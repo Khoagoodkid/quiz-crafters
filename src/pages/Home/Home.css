@@ -1,0 +1,49 @@
+.homeBody {
+    top:0;
+    right:0;
+    bottom: 0;
+    left:0;
+    position: absolute;
+    background-color: var(--background);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    overflow-x:hidden;
+}
+.home-container {
+    width: 100%;
+    padding-top: 15em;
+    display: flex;
+    justify-content: center;
+}
+.join-room{
+    color: white;
+    background-color: #322e47;
+ 
+    border-radius: .5em;
+    border: .1em solid lightgray;
+    display: flex;
+    flex-direction: column;
+    /* width: 30%; */
+    padding:3em 5em 3em 5em ;
+  
+    /* align-items: center; */
+    justify-content: center;
+    gap: 3em;
+    font-size: 1.1em;
+}
+.info {
+ 
+    width: auto;
+    display: flex;
+    align-items: center;
+    /* gap: 2em; */
+    /* background-color: red; */
+    /* justify-content: flex-start; */
+    justify-content: space-between;
+    gap: 1em;
+    
+}

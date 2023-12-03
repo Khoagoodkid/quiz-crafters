@@ -1,0 +1,16 @@
+.scoreBoard {
+    width: 50%;
+    height: auto;
+    padding: 1em;
+    background-color: #322e47;
+    border-radius: .5em;
+}
+
+.userCard {
+    /* background-color: aliceblue; */
+    padding: .5em;
+    display: flex;
+    justify-content: space-between;
+    font-size: 2em;
+    color: white;
+}
