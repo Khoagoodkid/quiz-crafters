@@ -2,9 +2,9 @@ import React, { useEffect, useState, useRef, useContext } from 'react'
 import { useLocation, useParams } from 'react-router-dom'
 import { io } from 'socket.io-client'
 import { questions } from '../../../db'
-const socket = io("http://localhost:8080")
+
 import axios from 'axios'
-const url = 'http://localhost:3000/rooms/'
+
 import "./Room.css"
 import Avatar from '@mui/material/Avatar'
 import dummy from '../../assets/dummy.jpg'

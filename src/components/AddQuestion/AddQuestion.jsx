@@ -92,7 +92,8 @@ function AddQuestion({ isModalOpen, setIsModalOpen, user, getQuestionsByCollecti
       console.log('Please select collection')
       return
     }
-    await axios.post(dbUrl + 'questions', {
+
+    await axios.post(dbUrl + 'questions', { 
 
       query: question.query,
       choices: [choice1, choice2, choice3, choice4],

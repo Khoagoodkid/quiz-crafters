@@ -78,6 +78,7 @@ function EditQuestion({ isModalOpen, setIsModalOpen, user, getQuestionsByCollect
             console.log('Please select collection')
             return
         }
+ 
         await axios.patch(dbUrl + `questions/${ques._id}`, {
 
             query: question.query,

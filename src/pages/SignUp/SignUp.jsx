@@ -22,10 +22,10 @@ export const SignUp = () => {
 
     const submitHandler = async (e) => {
         e.preventDefault()
-        const duplicated = await checkForDuplicate()
-        if (!user.email || !user.password || user.password != rtPassword || !boxCheck || duplicated) {
-            return
-        }
+        // const duplicated = await checkForDuplicate()
+        // if (!user.email || !user.password || user.password != rtPassword || !boxCheck || duplicated) {
+        //     return
+        // }
         await axios.post(dbUrl+"creators", user)
         .then(() => {
             setUser({
