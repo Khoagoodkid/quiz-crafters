@@ -16,7 +16,7 @@ import axios from 'axios'
 import { dbUrl } from './tools'
 function App() {
   // const socket = io(import.meta.env.VITE_SERVER_SOCKET , {'timeout':5000, 'connect timeout': 5000})
-  const socket = io("https://quiz-crafters-server.onrender.com:8080/" , {'timeout':5000, 'connect timeout': 5000})
+  const socket = io("https://quiz-crafters-server.onrender.com/" , {'timeout':5000, 'connect timeout': 5000})
   
   const [role, setRole] = useState("player")
   const [user, setUser] = useState(null)
