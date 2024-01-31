@@ -14,7 +14,8 @@ import TopBar from '../../components/TopBar/TopBar'
 
 import { useAnimate } from "framer-motion";
 
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 // const url = 'http://localhost:3000/'
 import music from "/music.mp4"
 import { useRef } from 'react'
@@ -52,7 +53,7 @@ function Home() {
     const [audioPlay, setAudioPlay] = useState(false)
     const [soundTrigger, setSoundTrigger] = useState(0)
     const [isOpenSetting, setIsOpenSetting] = useState(false);
-    const [volume, setVolume] = useState(0)
+    const [volume, setVolume] = useState(.5)
     const [selectedOption, setSelectedOption] = useState(null)
     const [isOpenScoreboard, setIsOpenScoreboard] = useState(false)
     const [users, setUsers] = useState([])
@@ -150,11 +151,14 @@ function Home() {
             return u.name == user.name && u.roomId == roomId
         })
         if (sameName) {
-            console.log("Already existing that username")
+            toast.error("Already existing that username")
             return
         }
         console.log(user)
-        if (!(roomId in rooms)) return;
+        if (!(roomId in rooms)) {
+            toast.error("Room number is not available")
+            return;
+        }
         socket.emit("joinRoom", (roomId))
         setIsLogin(true)
         login({
@@ -201,7 +205,7 @@ function Home() {
                 ...user,
                 points: curPoint
             })
-            console.log(curPoint)
+          
             axios.patch(usersUrl + me, { curPoint })
         }
 
@@ -222,6 +226,7 @@ function Home() {
     }
     return (
         <div className="homeBody bg-neutral-950 " >
+            <ToastContainer/>
             {isLogin && <SettingsIcon className='absolute left-5 top-5 cursor-pointer text-[--text]'
                 onClick={() => setIsOpenSetting(true)}
             />}

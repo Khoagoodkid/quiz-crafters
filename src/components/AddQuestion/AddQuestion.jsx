@@ -20,7 +20,8 @@ import {
 
 } from '@chakra-ui/react'
 import { ChevronDownIcon } from '@chakra-ui/icons'
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import "./AddQuestion.css"
 import axios from 'axios'
 import { dbUrl } from '../../tools'
@@ -81,15 +82,15 @@ function AddQuestion({ isModalOpen, setIsModalOpen, user, getQuestionsByCollecti
         if(choice.isCorrect) numberOfCorrect ++;
     })
     if(numberOfCorrect > 1) {
-      console.log("Please set only 1 correct answer")
+      toast.error("Please set only 1 correct answer")
       return 
     }
     if(numberOfCorrect == 0) {
-      console.log("Please set 1 correct answer!")
+      toast.error("Please set 1 correct answer!")
       return
     }
     if(!selectedCollection) {
-      console.log('Please select collection')
+      toast.error('Please select collection')
       return
     }
 
@@ -114,6 +115,7 @@ function AddQuestion({ isModalOpen, setIsModalOpen, user, getQuestionsByCollecti
   }
   return (
     <Modal isOpen={isModalOpen} className='aq-body'>
+      <ToastContainer/>
       <CloseButton onClick={() => setIsModalOpen(false)} sx={{position:'absolute', right:10,top:5, backgroundColor:'transparent'}} />
       <Menu>
         <MenuButton sx={{fontWeight:'bold'}} as={Button} rightIcon={<ChevronDownIcon />}>
