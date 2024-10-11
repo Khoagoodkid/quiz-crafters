@@ -41,8 +41,8 @@ function Room({ user, question, isStart, roomId, messages, setIsOpenSetting }) {
 
     return (
         <>
-            {!isStart ? (<div className='w-full text-white flex flex-row justify-center gap-10 overflow-hidden'>
-                <div className='flex flex-col w-1/2 justify-center items-center gap-10'>
+            {!isStart ? (<div className='w-full text-white flex md:flex-row flex-col justify-center gap-10'>
+                <div className='flex flex-col w-full md:w-1/2  justify-center items-center gap-10'>
                     <div className='flex flex-col items-center gap-0'>
                         <img src={dummy} className="relative w-40 z-10 mb-10 mt-2 rounded-full border-2 border-indigo-500 bg-slate-900 p-4  text-indigo-500" />
                         <span className='text-3xl font-bold'>{user.name}</span>
@@ -52,7 +52,7 @@ function Room({ user, question, isStart, roomId, messages, setIsOpenSetting }) {
                         style={{ backgroundColor: 'rgba(71, 71, 71,0.5)' }}
                         onSubmit={submitHandler}
                     >
-                        <div className='w-full h-[85%] flex flex-col items-start text-left overflow-y-scroll overflow-x-hidden p-5 pl-3 pb-1 '>
+                        <div className='w-full h-[85%]  flex flex-col items-start text-left overflow-y-scroll overflow-x-hidden p-5 pl-3 pb-1 '>
                             {messages?.map((m) => {
                                 return (
                                     <div className='flex flex-wrap items-start h-auto gap-2 '>
@@ -76,7 +76,7 @@ function Room({ user, question, isStart, roomId, messages, setIsOpenSetting }) {
                         />
                     </form>
                 </div>
-                <div className='w-full flex flex-col '>
+                <div className='w-full flex flex-col'>
                     <div>
                         <h2 className='text-2xl font-bold'>Participants: {members.length}</h2>
                     </div>

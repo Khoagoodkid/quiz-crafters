@@ -56,18 +56,18 @@ function Home() {
     const [volume, setVolume] = useState(.5)
     const [selectedOption, setSelectedOption] = useState(null)
     const [isOpenScoreboard, setIsOpenScoreboard] = useState(false)
-    const [users, setUsers] = useState([])
+    const [users, setUsers] = useState([])  
     const [isOpenWinner,setIsOpenWinner] = useState(false)
     useEffect(() => {
         generateGridCount();
-        document.getElementById("audio").volume = volume
+        // document.getElementById("audio").volume = volume
         window.addEventListener("resize", generateGridCount);
 
         return () => window.removeEventListener("resize", generateGridCount);
     }, []);
-    useEffect(() => {
-        document.getElementById("audio").volume = volume
-    }, [volume])
+    // useEffect(() => {
+    //     document.getElementById("audio").volume = volume
+    // }, [volume])
 
     useEffect(() => {
         socket.on("getQuestion", question => {
@@ -230,12 +230,12 @@ function Home() {
             {isLogin && <SettingsIcon className='absolute left-5 top-5 cursor-pointer text-[--text]'
                 onClick={() => setIsOpenSetting(true)}
             />}
-            <video src='music.mp4'
-                controls
+            {/* <video src='music.mp4'
+                controls = {false}
                 id="audio"
                 onPlay={() => setAudioPlay(true)} className=' hidden absolute top-0 left-0 right-0 bottom-0'
 
-            />
+            /> */}
             {!isLogin && <TopBar isOpenSetting={isOpenSetting} setIsOpenSetting={setIsOpenSetting} />}
             <div className="bg-neutral-950 w-full "
 
@@ -262,12 +262,12 @@ function Home() {
                         </h1>
 
                         <div className='flex flex-col p-5 text-white justify-center font-bold'>
-                            <div className='flex flex-row items-center justify-between gap-10 text-2xl'>
-                                <span>Name</span>
+                            <div className=' text-left flex flex-row items-center justify-between gap-10 text-2xl'>
+                                <span className='w-[2em]'>Name</span>
                                 <div>
                                     <TextField id="standard-basic" label="Name" variant="standard"
                                         onChange={(e) => setUser({ ...user, name: e.target.value })}
-                                        sx={{ label: { color: 'white' }, input: { color: 'white' } }}
+                                        sx={{ label: { color: 'white' }, input: { color: 'white' }, width:'7em' }}
                                         className='pointer-events-auto'
                                     />
                                 </div>
@@ -275,14 +275,14 @@ function Home() {
 
                             </div>
 
-                            <div className='flex flex-row items-center justify-between gap-10 text-2xl'>
+                            <div className='flex flex-row items-center justify-between gap-20 text-2xl'>
 
-                                <span>Join Room</span>
+                                <span className='w-[2em] md:w-auto'>Join Room</span>
                                 <div>
 
                                     <TextField id="standard-basic" label="Room ID" variant="standard"
                                         onChange={(e) => setRoomId(e.target.value)}
-                                        sx={{ label: { color: 'white' }, input: { color: 'white' } }}
+                                        sx={{ label: { color: 'white' }, input: { color: 'white' }, width:'7em'  }}
                                         className='pointer-events-auto'
                                     />
 
